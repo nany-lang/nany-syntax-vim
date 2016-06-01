@@ -82,7 +82,7 @@ syntax match nyk_number_float      "-\=\<\d\+\.\d\+\>"
 syntax match nyk_number_float      "-\=\<\d\+\.\d\+[eE]-\=\d\+\>"
 syntax match nyk_number_hex        "\$[0-9a-fA-F]\+\>"
 
-syntax match nyk_intrinsics        "!![a-z][a-z0-9\._]*"
+syntax match nyk_intrinsics        "!![_a-z][a-z0-9\._]*"
 
 syntax keyword nyk_func            break continue return raise assert
 
