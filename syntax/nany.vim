@@ -65,9 +65,6 @@ syntax match nyk_punctuation       "<<"
 syntax match nyk_punctuation       ">>"
 syntax match nyk_punctuation       "[&|~]"
 
-syntax match nyk_attributes        "<\["
-syntax match nyk_attributes        "\]>"
-
 syntax match nyk_symbol_delimiter  "[][]"
 syntax match nyk_symbol_delimiter  ":>"
 syntax match nyk_symbol_delimiter  "<:"
@@ -85,6 +82,7 @@ syntax match nyk_number_float      "-\=\<\d\+\.\d\+\>"
 syntax match nyk_number_float      "-\=\<\d\+\.\d\+[eE]-\=\d\+\>"
 syntax match nyk_number_hex        "\$[0-9a-fA-F]\+\>"
 
+syntax match nyk_intrinsics        "!![a-z][a-z0-9\._]*"
 
 syntax keyword nyk_func            break continue return raise assert
 
@@ -92,7 +90,7 @@ syntax keyword nyk_func            break continue return raise assert
 syntax region nyk_blocks     start="{"   end="}"   transparent fold contains=nyk_blocks
 syntax region nyk_comments   start="/\*" end="\*/" contains=nyk_todo,nyk_space_error,@Spell
 syntax region nyk_comments   start="//"  end="$"   contains=nyk_todo,nyk_space_error,@Spell
-syntax region nyk_intrinsics start="!!"  end="[^ a-z0-_9\.]"   contains=nyk_space_error
+syntax region nyk_attributes start="#\["  end="]"
 
 
 
@@ -127,7 +125,7 @@ if version >= 508 || !exists("did_nany_syn_inits")
 	HiLink nyk_bool              Boolean
 	HiLink nyk_comments          Comment
 	HiLink nyk_template          SpecialChar
-	HiLink nyk_intrinsics        SpecialChar
+	HiLink nyk_intrinsics        Exception
 	HiLink nyk_attributes        SpecialChar
 	HiLink nyk_conditional       Conditional
 	HiLink nyk_null              Constant
