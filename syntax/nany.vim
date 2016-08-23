@@ -24,8 +24,8 @@ syntax keyword nyk_null         null
 syntax keyword nyk_labels       switch case default
 syntax keyword nyk_operators    not and or mod shl shr xor
 syntax keyword nyk_repeat       in on do for while each
-syntax keyword nyk_stmt         namespace
-syntax keyword nyk_stmt         new typedef typeof function func enum workflow operator view timeout
+syntax keyword nyk_stmt         namespace unittest
+syntax keyword nyk_stmt         new typedef typeof func enum workflow operator view timeout
 syntax keyword nyk_stmt         spawn every async sync
 syntax keyword nyk_class        class
 syntax keyword nyk_types        var ref const cref
